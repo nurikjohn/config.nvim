@@ -27,18 +27,18 @@ return {
 					"n",
 					"gd",
 					require("telescope.builtin").lsp_definitions,
-					{ buffer = event.buf, desc = "[G]oto [D]efinition" }
+					{ buffer = event.buf, desc = "Go to definition" }
 				)
 				vim.keymap.set(
 					"n",
 					"gr",
 					require("telescope.builtin").lsp_references,
-					{ buffer = event.buf, desc = "[G]oto [R]eferences" }
+					{ buffer = event.buf, desc = "Go to references" }
 				)
-				vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, { buffer = event.buf, desc = "Rename" })
+				vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = event.buf, desc = "Rename" })
 				vim.keymap.set(
 					{ "n", "x" },
-					"<leader>ca",
+					"<leader>a",
 					vim.lsp.buf.code_action,
 					{ buffer = event.buf, desc = "Actions" }
 				)
