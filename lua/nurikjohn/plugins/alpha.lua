@@ -105,11 +105,13 @@ local config = {
 	},
 }
 
-return {
-	"goolord/alpha-nvim",
-	dependencies = {},
-	lazy = false,
-	config = function()
-		require("alpha").setup(config)
-	end,
-}
+-- return {
+-- 	"goolord/alpha-nvim",
+-- 	dependencies = {},
+-- 	lazy = false,
+-- 	config = function()
+-- 		require("alpha").setup(config)
+-- 	end,
+-- }
+
+return {}

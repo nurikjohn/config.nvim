@@ -6,10 +6,13 @@ return {
 			patterns = {
 				{
 					file_pattern = ".env*",
-					cloak_pattern = "= .+",
+					cloak_pattern = {
+						{ "(= ).+", replace = "%1" },
+					},
 					replace = nil,
 				},
 			},
+			replace = "[outer] %1",
 		})
 
 		vim.keymap.set("n", "g.", require("cloak").toggle, { buffer = event.buf, desc = "Toggle cloak" })

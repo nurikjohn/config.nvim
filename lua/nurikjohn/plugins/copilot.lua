@@ -4,9 +4,10 @@ return {
 	build = ":Copilot auth",
 	event = "InsertEnter",
 	opts = {
+		enabled = false,
 		suggestion = {
 			enabled = false,
-			auto_trigger = true,
+			auto_trigger = false,
 			keymap = {
 				accept = "<C-A>", -- handled by nvim-cmp / blink.cmp
 				next = "<M-]>",

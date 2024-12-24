@@ -71,14 +71,21 @@ return {
 						return items
 					end,
 				},
+				markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink" },
 			},
 			completion = {
-				enabled_providers = { "lsp", "path", "snippets", "buffer", "copilot" },
-				menu = {
-					draw = {
-						columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind" } },
-					},
+				enabled_providers = { "lsp", "path", "snippets", "buffer", "markdown" },
+			},
+		},
+		completion = {
+			menu = {
+				draw = {
+					columns = { { "kind_icon" }, { "label", gap = 3, "label_description" } },
 				},
+			},
+			documentation = {
+				auto_show = true,
+				auto_show_delay_ms = 200,
 			},
 		},
 	},
