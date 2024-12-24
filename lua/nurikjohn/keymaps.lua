@@ -28,3 +28,11 @@ vim.api.nvim_create_autocmd("TextYankPost", {
 vim.keymap.set("n", "<C-f>", ":silent !tmux neww tmux-sessionizer<CR>")
 
 vim.keymap.set("n", "<leader>q", vim.diagnostic.setloclist, { desc = "Open diagnostic [Q]uickfix list" })
+
+vim.api.nvim_create_autocmd("ColorScheme", {
+	pattern = "*",
+	callback = function()
+		vim.api.nvim_set_hl(0, "TelescopeNormal", { bg = "none" })
+		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
+	end,
+})

@@ -39,11 +39,8 @@ return {
 					"node_modules",
 					".git",
 				},
+				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
 			},
-		})
-
-		require("telescope").setup({
-			extensions = {},
 		})
 
 		pcall(require("telescope").load_extension, "fzf")
