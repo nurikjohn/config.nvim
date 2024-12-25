@@ -1,50 +1,11 @@
 local if_nil = vim.F.if_nil
 
-local default_terminal = {
-	type = "terminal",
-	command = nil,
-	width = 69,
-	height = 8,
-	opts = {
-		redraw = true,
-		window_config = {},
-	},
-}
-
-local default_header = {
-	type = "text",
-	val = {
-		[[                                  __]],
-		[[     ___     ___    ___   __  __ /\_\    ___ ___]],
-		[[    / _ `\  / __`\ / __`\/\ \/\ \\/\ \  / __` __`\]],
-		[[   /\ \/\ \/\  __//\ \_\ \ \ \_/ |\ \ \/\ \/\ \/\ \]],
-		[[   \ \_\ \_\ \____\ \____/\ \___/  \ \_\ \_\ \_\ \_\]],
-		[[    \/_/\/_/\/____/\/___/  \/__/    \/_/\/_/\/_/\/_/]],
-	},
-	opts = {
-		position = "center",
-		hl = "Type",
-		-- wrap = "overflow";
-	},
-}
-
-local footer = {
-	type = "text",
-	val = "",
-	opts = {
-		position = "center",
-		hl = "Number",
-	},
-}
-
-local leader = "SPC"
-
 --- @param sc string
 --- @param txt string
 --- @param keybind string? optional
 --- @param keybind_opts table? optional
 local function button(sc, txt, keybind, keybind_opts)
-	local sc_ = sc:gsub("%s", ""):gsub(leader, "<leader>")
+	local sc_ = sc:gsub("%s", ""):gsub("SPC", "<leader>")
 
 	local opts = {
 		position = "center",
@@ -72,46 +33,60 @@ local function button(sc, txt, keybind, keybind_opts)
 	}
 end
 
-local buttons = {
-	type = "group",
-	val = {
-		button("n", "  New file", "<cmd>ene <CR>"),
-		button("󱁐 s f", "󰈞  Find file"),
-		button("󱁐 s g", "󰬴  Find word"),
-		button("-", "󰉋  Open file tree"),
-	},
-	opts = {
-		spacing = 1,
-	},
+return {
+	"goolord/alpha-nvim",
+	dependencies = {},
+	lazy = false,
+	config = function()
+		require("alpha").setup({
+			layout = {
+				{ type = "padding", val = 6 },
+				{
+					type = "text",
+					val = {
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠟⠟⠛⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢿⠿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠉⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠱⣀⠉⠻⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠛⠁⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠁⠀⠀⠀⠒⡀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠈⠆⠀⠀⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠏⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⡀⠀⠀⠀⠀⠈⠂⠀⠀⠀⠙⣿⠿⠟⠛⠉⠉⠉⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢰⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠁⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣾⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡷⠀⠀⠀⣐⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡀⠀⠀⠀⠀⠄⠀⠀⠀⣼⣿⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡥⡀⠀⢰⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢠⣿⡿⣿⣷⣄⠀⠀⠈⠀⢀⣿⣿⣿⣿⡿⣟⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣏⠀⠠⠁⠀⣠⣶⣶⣦⡀⠀⠀⠀⠀⠀⠀⣿⣿⡇⢹⣿⣿⡇⠀⠀⠀⢸⢿⣻⣽⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣦⡊⠀⢰⣿⣿⠈⣿⣧⠀⠀⠀⠀⠀⠀⢻⣿⣿⣾⣿⠟⠁⠀⠀⠀⢸⣿⣿⣿⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⢸⣿⣿⣦⣿⡿⠀⠀⣠⡤⠀⠀⠀⠀⠈⠁⠀⠀⠀⠀⠀⠀⣾⣿⣟⣿⣿⣯⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡀⠀⠙⠛⠛⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣻⣿⣭⣿⣿⣿⣶⣶⣶⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠸⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣽⣿⣦⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⢟⣿⣾⣿⣿⣿⣿⣿⣿⣷⣶⣤⣤⣤⣤⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⠿⣿⣿⣿⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣧⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠙⠻⣿⣿⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻⣿⣿ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣇⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠈⠻ ]],
+						[[ ⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ ]],
+					},
+					opts = {
+						position = "center",
+						hl = "Type",
+					},
+				},
+				{ type = "padding", val = 5 },
+				{
+					type = "group",
+					val = {
+						button("n", "  New file", "<cmd>ene <CR>"),
+						button("󱁐 s f", "󰈞  Find file"),
+						button("󱁐 s g", "󰬴  Find word"),
+						button("-", "󰉋  Open file tree"),
+					},
+					opts = {
+						spacing = 1,
+					},
+				},
+			},
+			opts = {
+				margin = 0,
+			},
+		})
+	end,
 }
-
-local section = {
-	terminal = default_terminal,
-	header = default_header,
-	buttons = buttons,
-	footer = footer,
-}
-
-local config = {
-	layout = {
-		{ type = "padding", val = 13 },
-		section.header,
-		{ type = "padding", val = 2 },
-		section.buttons,
-		section.footer,
-	},
-	opts = {
-		margin = 5,
-	},
-}
-
--- return {
--- 	"goolord/alpha-nvim",
--- 	dependencies = {},
--- 	lazy = false,
--- 	config = function()
--- 		require("alpha").setup(config)
--- 	end,
--- }
-
-return {}

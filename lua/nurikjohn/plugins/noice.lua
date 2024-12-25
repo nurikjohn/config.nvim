@@ -29,7 +29,7 @@ return {
 
 			---@type table<string, CmdlineFormat>
 			format = {
-				cmdline = { pattern = "^:", icon = "", lang = "vim" },
+				cmdline = { pattern = "^:", icon = ":", lang = "vim" },
 				search_down = { kind = "search", pattern = "^/", icon = " ", lang = "regex" },
 				search_up = { kind = "search", pattern = "^%?", icon = " ", lang = "regex" },
 				filter = { pattern = "^:%s*!", icon = "$", lang = "bash" },
