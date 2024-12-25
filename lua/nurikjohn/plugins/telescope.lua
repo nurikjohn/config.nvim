@@ -39,7 +39,10 @@ return {
 					"node_modules",
 					".git",
 				},
-				borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
+				prompt_prefix = "  ",
+				selection_caret = "  ",
+				entry_prefix = "   ",
 			},
 		})
 
