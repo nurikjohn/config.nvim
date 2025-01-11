@@ -58,7 +58,7 @@ return {
 				["g\\"] = "actions.toggle_trash",
 			},
 			win_options = {
-				winbar = "%{v:lua.CustomOilBar()}",
+				-- winbar = "%{v:lua.CustomOilBar()}",
 			},
 		})
 

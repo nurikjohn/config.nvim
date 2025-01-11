@@ -43,6 +43,10 @@ return { -- Useful plugin to show you pending keybinds.
 		spec = {
 			{ "<leader>s", group = "Search" },
 			{ "<leader>g", group = "Git", mode = { "n", "v" } },
+			{ "<leader>d", group = "Debug", mode = { "n", "v" } },
+			{ "<leader>h", group = "Harpoon", mode = { "n", "v" } },
+			{ "<leader>r", group = "Request", mode = { "n", "v" } },
+			{ "<leader><leader>", group = "Harpoon navigation", mode = { "n", "v" } },
 		},
 	},
 }

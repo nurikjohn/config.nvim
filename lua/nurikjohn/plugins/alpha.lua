@@ -70,7 +70,7 @@ return {
 						hl = "Type",
 					},
 				},
-				{ type = "padding", val = 5 },
+				{ type = "padding", val = 3 },
 				{
 					type = "group",
 					val = {

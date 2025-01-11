@@ -8,6 +8,7 @@ return {
 					file_pattern = ".env*",
 					cloak_pattern = {
 						{ "(= ).+", replace = "%1" },
+						{ "(=).+", replace = "%1" },
 					},
 					replace = nil,
 				},
