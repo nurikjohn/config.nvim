@@ -45,7 +45,7 @@ return { -- Useful plugin to show you pending keybinds.
 			{ "<leader>g", group = "Git", mode = { "n", "v" } },
 			{ "<leader>d", group = "Debug", mode = { "n", "v" } },
 			{ "<leader>h", group = "Harpoon", mode = { "n", "v" } },
-			{ "<leader>r", group = "Request", mode = { "n", "v" } },
+			{ "<leader>k", group = "Kulala", mode = { "n", "v" } },
 			{ "<leader><leader>", group = "Harpoon navigation", mode = { "n", "v" } },
 		},
 	},
