@@ -25,6 +25,14 @@ vim.api.nvim_buf_set_keymap(
 vim.api.nvim_buf_set_keymap(
 	0,
 	"n",
+	"<leader>i",
+	"<cmd>lua require('kulala').show_stats()<cr>",
+	{ noremap = true, silent = true, desc = "Show request statistics" }
+)
+
+vim.api.nvim_buf_set_keymap(
+	0,
+	"n",
 	"<leader>t",
 	"<cmd>lua require('kulala').toggle_view()<cr>",
 	{ noremap = true, silent = true, desc = "Toggle between body and headers" }

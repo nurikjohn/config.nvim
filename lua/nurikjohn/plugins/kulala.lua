@@ -7,4 +7,28 @@ return {
 			table.insert(opts.ensure_installed, "http")
 		end,
 	},
+	opts = {
+		contenttypes = {
+			["application/xml"] = {
+				ft = "xml",
+				formatter = { "prettier", "." },
+				pathresolver = {},
+			},
+			["text/html"] = {
+				ft = "html",
+				formatter = { "prettier", "." },
+				pathresolver = {},
+			},
+		},
+	},
+	config = function()
+		local kulala = require("kulala")
+
+		vim.keymap.set(
+			"n",
+			"<leader>kq",
+			kulala.scratchpad,
+			{ silent = true, noremap = true, desc = "Open scratchpad" }
+		)
+	end,
 }
