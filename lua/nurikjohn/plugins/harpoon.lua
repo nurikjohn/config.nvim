@@ -40,18 +40,5 @@ return {
 		vim.keymap.set("n", "<leader>hr", function()
 			harpoon:list():remove()
 		end, { desc = "Remove from harpoon" })
-
-		vim.keymap.set("n", "<leader><leader>1", function()
-			harpoon:list():select(1)
-		end)
-		vim.keymap.set("n", "<leader><leader>2", function()
-			harpoon:list():select(2)
-		end)
-		vim.keymap.set("n", "<leader><leader>3", function()
-			harpoon:list():select(3)
-		end)
-		vim.keymap.set("n", "<leader><leader>4", function()
-			harpoon:list():select(4)
-		end)
 	end,
 }

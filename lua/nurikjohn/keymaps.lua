@@ -36,3 +36,10 @@ vim.api.nvim_create_autocmd("ColorScheme", {
 		vim.api.nvim_set_hl(0, "TelescopeBorder", { bg = "none" })
 	end,
 })
+
+-- vim.cmd([[
+--     augroup RestoreCursorShapeOnExit
+--         autocmd!
+--         autocmd VimLeave * set guicursor=a:ver1
+--     augroup END
+-- ]])

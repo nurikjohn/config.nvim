@@ -61,7 +61,7 @@ return {
 		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "Search select telescope" })
 		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search diagnostics" })
 
-		vim.keymap.set("n", "<leader>/", function()
+		vim.keymap.set("n", "<leader><leader>", function()
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 				winblend = 10,
 				previewer = false,

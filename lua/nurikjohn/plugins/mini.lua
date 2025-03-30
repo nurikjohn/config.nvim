@@ -66,17 +66,19 @@ end
 return {
 	"echasnovski/mini.nvim",
 	config = function()
+		local gen_spec = require("mini.ai").gen_spec
+
 		require("mini.ai").setup({
 			n_lines = 500,
+			custom_textobjects = {
+				f = gen_spec.treesitter({
+					a = "@function.outer",
+					i = "@function.inner",
+				}),
+			},
 		})
 
 		require("mini.surround").setup({ n_lines = 500 })
-
-		-- local sessions = require("mini.sessions")
-		-- sessions.setup({
-		-- 	autoread = true,
-		-- 	autowrite = true,
-		-- })
 
 		local statusline = require("mini.statusline")
 		statusline.setup({ use_icons = vim.g.have_nerd_font, content = { active = active_statusline } })
