@@ -2,6 +2,7 @@ return {
 	{
 		"lewis6991/gitsigns.nvim",
 		opts = {
+			current_line_blame = true,
 			on_attach = function(bufnr)
 				local gitsigns = require("gitsigns")
 
@@ -36,6 +37,7 @@ return {
 				map("v", "<leader>gr", function()
 					gitsigns.reset_hunk({ vim.fn.line("."), vim.fn.line("v") })
 				end, { desc = "reset git hunk" })
+
 				-- normal mode
 				map("n", "<leader>gs", gitsigns.stage_hunk, { desc = "git [s]tage hunk" })
 				map("n", "<leader>gr", gitsigns.reset_hunk, { desc = "git [r]eset hunk" })
@@ -44,10 +46,14 @@ return {
 				map("n", "<leader>gR", gitsigns.reset_buffer, { desc = "git [R]eset buffer" })
 				map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "git [p]review hunk" })
 				map("n", "<leader>gb", gitsigns.blame_line, { desc = "git [b]lame line" })
+				map("n", "<leader>gB", gitsigns.blame, { desc = "git [B]lame" })
 				map("n", "<leader>gd", gitsigns.diffthis, { desc = "git [d]iff against index" })
 				map("n", "<leader>gD", function()
 					gitsigns.diffthis("@")
 				end, { desc = "git [D]iff against last commit" })
+				map("n", "<leader>gl", function()
+					gitsigns.setqflist("all", {})
+				end, { desc = "git [l]ist hunks" })
 			end,
 		},
 	},
