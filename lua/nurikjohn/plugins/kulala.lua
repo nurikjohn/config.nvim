@@ -30,5 +30,7 @@ return {
 			kulala.scratchpad,
 			{ silent = true, noremap = true, desc = "Open scratchpad" }
 		)
+
+		kulala.setup()
 	end,
 }

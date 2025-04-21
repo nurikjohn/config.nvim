@@ -18,6 +18,8 @@ return {
 		},
 	},
 	config = function()
+		vim.lsp.inlay_hint.enable(true)
+
 		vim.api.nvim_create_autocmd("LspAttach", {
 			group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
 			callback = function(event)
@@ -72,7 +74,17 @@ return {
 
 		local servers = {
 			-- clangd = {},
-			gopls = {},
+			gopls = {
+				settings = {
+					gopls = {
+						["ui.inlayhint.hints"] = {
+							compositeLiteralFields = true,
+							constantValues = true,
+							parameterNames = true,
+						},
+					},
+				},
+			},
 			pyright = {},
 			-- rust_analyzer = {},
 			ts_ls = {
@@ -85,6 +97,10 @@ return {
 					Lua = {
 						completion = {
 							callSnippet = "Replace",
+						},
+						hint = {
+							enable = true,
+							arrayIndex = "Disable",
 						},
 					},
 				},
