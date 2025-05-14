@@ -74,7 +74,7 @@ return {
 					},
 					markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink" },
 				},
-				default = { "lsp", "path", "snippets", "buffer", "markdown" },
+				default = { "lsp", "path", "snippets", "buffer", "markdown", "copilot" },
 			},
 			completion = {
 				menu = {
@@ -84,7 +84,7 @@ return {
 				},
 				documentation = {
 					auto_show = true,
-					auto_show_delay_ms = 200,
+					auto_show_delay_ms = 20,
 				},
 			},
 		},

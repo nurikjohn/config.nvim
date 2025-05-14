@@ -5,11 +5,18 @@ return {
 	opts = {
 		settings = {
 			tsserver_file_preferences = {
-				includeInlayParameterNameHints = "literals",
+				includeInlayParameterNameHints = "all",
 				includeInlayFunctionParameterTypeHints = true,
 				includeInlayVariableTypeHints = false,
 				includeInlayPropertyDeclarationTypeHints = false,
 				includeInlayEnumMemberValueHints = true,
+			},
+			expose_as_code_action = {
+				"fix_all",
+				"add_missing_imports",
+				"remove_unused",
+				"remove_unused_imports",
+				"organize_imports",
 			},
 		},
 	},
