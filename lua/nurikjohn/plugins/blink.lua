@@ -74,7 +74,7 @@ return {
 					},
 					markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink" },
 				},
-				default = { "lsp", "path", "snippets", "buffer", "markdown", "copilot" },
+				default = { "lsp", "path", "snippets", "buffer", "markdown" },
 			},
 			completion = {
 				menu = {
