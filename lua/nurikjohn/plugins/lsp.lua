@@ -5,7 +5,6 @@ return {
 		"williamboman/mason-lspconfig.nvim",
 		"WhoIsSethDaniel/mason-tool-installer.nvim",
 
-		{ "j-hui/fidget.nvim", opts = {} },
 		"saghen/blink.cmp",
 		{
 			"folke/lazydev.nvim",
@@ -87,34 +86,7 @@ return {
 			},
 			pyright = {},
 			-- rust_analyzer = {},
-			ts_ls = {
-				settings = {
-					typescript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all", -- 'none' | 'literals' | 'all'
-							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-					javascript = {
-						inlayHints = {
-							includeInlayParameterNameHints = "all",
-							includeInlayParameterNameHintsWhenArgumentMatchesName = true,
-							includeInlayFunctionParameterTypeHints = true,
-							includeInlayVariableTypeHints = true,
-							includeInlayVariableTypeHintsWhenTypeMatchesName = true,
-							includeInlayPropertyDeclarationTypeHints = true,
-							includeInlayFunctionLikeReturnTypeHints = true,
-							includeInlayEnumMemberValueHints = true,
-						},
-					},
-				},
-			},
+
 			tailwindcss = {},
 
 			lua_ls = {
@@ -136,11 +108,14 @@ return {
 
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
-			"stylua", -- Used to format Lua code
+			"stylua",
 		})
-		require("mason-tool-installer").setup({ ensure_installed = ensure_installed })
+		require("mason-tool-installer").setup({
+			ensure_installed = ensure_installed,
+		})
 
 		require("mason-lspconfig").setup({
+			automatic_enable = false,
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
