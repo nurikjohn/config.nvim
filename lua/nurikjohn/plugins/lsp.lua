@@ -73,17 +73,7 @@ return {
 
 		local servers = {
 			-- clangd = {},
-			gopls = {
-				settings = {
-					gopls = {
-						["ui.inlayhint.hints"] = {
-							compositeLiteralFields = true,
-							constantValues = true,
-							parameterNames = true,
-						},
-					},
-				},
-			},
+			gopls = {},
 			pyright = {},
 			-- rust_analyzer = {},
 
@@ -109,13 +99,13 @@ return {
 		local ensure_installed = vim.tbl_keys(servers or {})
 		vim.list_extend(ensure_installed, {
 			"stylua",
+			"gopls",
 		})
 		require("mason-tool-installer").setup({
 			ensure_installed = ensure_installed,
 		})
 
 		require("mason-lspconfig").setup({
-			automatic_enable = false,
 			handlers = {
 				function(server_name)
 					local server = servers[server_name] or {}
