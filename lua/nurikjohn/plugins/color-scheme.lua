@@ -1,4 +1,4 @@
-local current_theme_path = vim.fn.expand("~/.config/themes/current-theme/nvim.lua")
+local current_theme_path = vim.fn.expand("~/.config/themes/.current/nvim.lua")
 
 if vim.fn.filereadable(current_theme_path) == 1 then
 	return dofile(current_theme_path)
