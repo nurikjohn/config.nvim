@@ -75,3 +75,24 @@ vim.opt.foldtext = ""
 vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
+
+-- Auto-reload files when changed externally (e.g., by Claude)
+vim.opt.autoread = true
+
+-- Auto-reload files when switching back to nvim from tmux
+vim.api.nvim_create_autocmd({ "FocusGained", "BufEnter", "CursorHold", "CursorHoldI" }, {
+	pattern = "*",
+	callback = function()
+		if vim.fn.mode() ~= "c" and vim.bo.buftype ~= "nofile" then
+			vim.cmd("checktime")
+		end
+	end,
+})
+
+-- Additional trigger on file changes (uses libuv file watcher)
+vim.api.nvim_create_autocmd("FileChangedShellPost", {
+	pattern = "*",
+	callback = function()
+		vim.notify("File changed on disk, reloaded", vim.log.levels.INFO)
+	end,
+})
