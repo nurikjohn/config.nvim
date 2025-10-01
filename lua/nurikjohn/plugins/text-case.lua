@@ -40,5 +40,4 @@ return {
 			{ desc = "LSP Rename to PascalCase" }
 		)
 	end,
-	lazy = false,
 }
