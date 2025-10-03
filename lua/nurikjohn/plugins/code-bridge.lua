@@ -10,7 +10,7 @@ return {
 			},
 		})
 
-		vim.keymap.set("n", "<leader>ca", ":CodeBridgeTmux<CR>", { desc = "Send file to claude" })
-		vim.keymap.set("v", "<leader>ca", ":CodeBridgeTmux<CR>", { desc = "Send selection to claude" })
+		vim.keymap.set("n", "<leader>p", ":CodeBridgeTmux<CR>", { desc = "Send file to claude" })
+		vim.keymap.set("v", "<leader>p", ":CodeBridgeTmux<CR>", { desc = "Send selection to claude" })
 	end,
 }
