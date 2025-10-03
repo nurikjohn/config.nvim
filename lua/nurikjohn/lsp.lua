@@ -1,5 +1,5 @@
 ---@diagnostic disable: undefined-global
-vim.lsp.inlay_hint.enable(true)
+vim.lsp.inlay_hint.enable(false)
 
 vim.api.nvim_create_autocmd("LspAttach", {
 	group = vim.api.nvim_create_augroup("lsp-attach", { clear = true }),
@@ -17,7 +17,14 @@ vim.api.nvim_create_autocmd("LspAttach", {
 			{ buffer = event.buf, desc = "Go to references" }
 		)
 		vim.keymap.set("n", "<leader>r", vim.lsp.buf.rename, { buffer = event.buf, desc = "Rename" })
-		vim.keymap.set({ "n", "x" }, "<leader>a", vim.lsp.buf.code_action, { buffer = event.buf, desc = "Actions" })
+		vim.keymap.set({ "n", "x" }, "<leader>a", function()
+			vim.lsp.buf.code_action({
+				context = {
+					only = { "source" },
+					diagnostics = {},
+				},
+			})
+		end, { buffer = event.buf, desc = "Source Actions" })
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		if client and client.server_capabilities.documentHighlightProvider then
