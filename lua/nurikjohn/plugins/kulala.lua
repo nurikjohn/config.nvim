@@ -11,13 +11,13 @@ return {
 		contenttypes = {
 			["application/xml"] = {
 				ft = "xml",
-				formatter = { "prettier", "." },
-				pathresolver = {},
+				formatter = vim.fn.executable("xmllint") == 1 and { "xmllint", "--format", "-" },
+				pathresolver = vim.fn.executable("xmllint") == 1 and { "xmllint", "--xpath", "{{path}}", "-" },
 			},
 			["text/html"] = {
 				ft = "html",
-				formatter = { "prettier", "." },
-				pathresolver = {},
+				formatter = vim.fn.executable("xmllint") == 1 and { "xmllint", "--format", "--html", "-" },
+				pathresolver = nil,
 			},
 		},
 	},
