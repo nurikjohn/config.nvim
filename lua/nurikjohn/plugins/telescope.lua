@@ -61,6 +61,14 @@ return {
 		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "Search select telescope" })
 		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search diagnostics" })
 
+		vim.keymap.set("n", "<leader>se", function()
+			builtin.find_files({
+				prompt_title = "Search .env Files",
+				hidden = true,
+				find_command = { "find", ".", "-maxdepth", "1", "-type", "f", "-name", ".env*" },
+			})
+		end, { desc = "Search .env files" })
+
 		vim.keymap.set("n", "<leader><leader>", function()
 			builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
 				winblend = 10,

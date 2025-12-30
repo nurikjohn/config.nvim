@@ -1,7 +1,8 @@
 return {
+	"samir-roy/code-bridge.nvim",
 	-- "nurikjohn/code-bridge.nvim",
-	dir = "~/Documents/code/personal/code-bridge.nvim",
-	name = "code-bridge",
+	-- dir = "~/Documents/code/personal/code-bridge.nvim",
+	-- name = "code-bridge",
 	config = function()
 		require("code-bridge").setup({
 			tmux = {
