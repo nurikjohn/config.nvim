@@ -24,7 +24,7 @@ vim.api.nvim_create_autocmd("LspAttach", {
 					diagnostics = {},
 				},
 			})
-		end, { buffer = event.buf, desc = "Source Actions" })
+		end, { buffer = event.buf, desc = "Code Actions" })
 
 		local client = vim.lsp.get_client_by_id(event.data.client_id)
 		if client and client.server_capabilities.documentHighlightProvider then
