@@ -14,21 +14,21 @@ return {
 			use_telescope = true,
 		})
 
-		vim.keymap.set("v", "<leader>pp", ":CodeBridgeTmux<CR>", { desc = "Send selection to claude" })
-		vim.keymap.set("n", "<leader>pp", ":CodeBridgeTmux<CR>", { desc = "Send file to claude" })
-		vim.keymap.set("n", "<leader>pd", ":CodeBridgeTmuxDiagnostics<CR>", { desc = "Send diagnostics to claude" })
+		vim.keymap.set("v", "<leader>pp", ":CodeBridgeTmux<CR>", { desc = "Send selection to agent" })
+		vim.keymap.set("n", "<leader>pp", ":CodeBridgeTmux<CR>", { desc = "Send file to agent" })
+		vim.keymap.set("n", "<leader>pd", ":CodeBridgeTmuxDiagnostics<CR>", { desc = "Send diagnostics to agent" })
 		vim.keymap.set(
 			"n",
 			"<leader>pD",
 			":CodeBridgeTmuxDiagnosticsAll<CR>",
-			{ desc = "Send all diagnostics to claude" }
+			{ desc = "Send all diagnostics to agent" }
 		)
-		vim.keymap.set("n", "<leader>pe", ":CodeBridgeTmuxDiagnosticsErrors<CR>", { desc = "Send errors to claude" })
+		vim.keymap.set("n", "<leader>pe", ":CodeBridgeTmuxDiagnosticsErrors<CR>", { desc = "Send errors to agent" })
 		vim.keymap.set(
 			"n",
 			"<leader>pE",
 			":CodeBridgeTmuxDiagnosticsErrorsAll<CR>",
-			{ desc = "Send all errors to claude" }
+			{ desc = "Send all errors to agent" }
 		)
 	end,
 }

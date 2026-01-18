@@ -41,13 +41,16 @@ return { -- Useful plugin to show you pending keybinds.
 
 		-- Document existing key chains
 		spec = {
-			{ "<leader>s", group = "Search" },
-			{ "<leader>g", group = "Git", mode = { "n", "v" } },
-			{ "<leader>d", group = "Debug", mode = { "n" } },
-			{ "<leader>k", group = "Kulala", mode = { "n" } },
-			{ "<leader>u", group = "Undo Tree", mode = { "n" } },
-			{ "<leader>t", group = "Trouble", mode = { "n" } },
-			{ "<leader>p", group = "Assistant", mode = { "n" } },
+			{ "<leader>a", group = "Actions", icon = { icon = "", color = "purple" } },
+			{ "<leader>r", group = "Rename", icon = { icon = "󰑕", color = "blue" } },
+			{ "<leader>f", group = "Format Document", icon = { icon = "", color = "purple" } },
+			{ "<leader>q", group = "Open Diagnostics", icon = { icon = "󱖫", color = "red" } },
+			{ "<leader>s", group = "Search", icon = { icon = "", color = "green" } },
+			{ "<leader>g", group = "Git", mode = { "n", "v" }, icon = { icon = "", color = "blue" } },
+			{ "<leader>d", group = "Debug", mode = { "n" }, icon = { icon = "", color = "red" } },
+			{ "<leader>k", group = "Kulala", mode = { "n" }, icon = { icon = "󱂛", color = "yellow" } },
+			{ "<leader>u", group = "Undo Tree", mode = { "n" }, icon = { icon = "󰕍", color = "red" } },
+			{ "<leader>p", group = "AI", mode = { "n" }, icon = { icon = "󰁤", color = "purple" } },
 		},
 	},
 }

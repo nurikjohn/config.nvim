@@ -40,8 +40,8 @@ return {
 					".git",
 				},
 				-- borderchars = { "─", "│", "─", "│", "┌", "┐", "┘", "└" },
-				prompt_prefix = "  ",
-				selection_caret = "  ",
+				prompt_prefix = " 󰅂 ",
+				selection_caret = " 󰅂 ",
 				entry_prefix = "   ",
 			},
 		})
@@ -52,14 +52,14 @@ return {
 		local builtin = require("telescope.builtin")
 
 		vim.keymap.set("n", "<leader>sf", builtin.find_files, { desc = "Search Files" })
-		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search by grep" })
-		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "Search resume" })
-		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Search word" })
-		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search help" })
-		vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Search existing buffers" })
-		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search keymaps" })
-		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "Search select telescope" })
-		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search diagnostics" })
+		vim.keymap.set("n", "<leader>sg", builtin.live_grep, { desc = "Search by Grep" })
+		vim.keymap.set("n", "<leader>sr", builtin.resume, { desc = "Search Resume" })
+		vim.keymap.set("n", "<leader>sw", builtin.grep_string, { desc = "Search Word" })
+		vim.keymap.set("n", "<leader>sh", builtin.help_tags, { desc = "Search Help" })
+		vim.keymap.set("n", "<leader>sb", builtin.buffers, { desc = "Search Existing Buffers" })
+		vim.keymap.set("n", "<leader>sk", builtin.keymaps, { desc = "Search Keymaps" })
+		vim.keymap.set("n", "<leader>ss", builtin.builtin, { desc = "Search Select Telescope" })
+		vim.keymap.set("n", "<leader>sd", builtin.diagnostics, { desc = "Search Diagnostics" })
 
 		vim.keymap.set("n", "<leader>se", function()
 			builtin.find_files({
@@ -74,17 +74,17 @@ return {
 				winblend = 10,
 				previewer = false,
 			}))
-		end, { desc = "Search in current buffer" })
+		end, { desc = "Search in Current Buffer" })
 
 		vim.keymap.set("n", "<leader>s/", function()
 			builtin.live_grep({
 				grep_open_files = true,
-				prompt_title = "Live grep in open files",
+				prompt_title = "Live Grep in Open Files",
 			})
 		end, { desc = "Search in open files" })
 
 		vim.keymap.set("n", "<leader>sn", function()
 			builtin.find_files({ cwd = vim.fn.stdpath("config") })
-		end, { desc = "Search neovim files" })
+		end, { desc = "Search Neovim Files" })
 	end,
 }
