@@ -41,16 +41,23 @@ return { -- Useful plugin to show you pending keybinds.
 
 		-- Document existing key chains
 		spec = {
-			{ "<leader>a", group = "Actions", icon = { icon = "", color = "purple" } },
-			{ "<leader>r", group = "Rename", icon = { icon = "󰑕", color = "blue" } },
-			{ "<leader>f", group = "Format Document", icon = { icon = "", color = "purple" } },
-			{ "<leader>q", group = "Open Diagnostics", icon = { icon = "󱖫", color = "red" } },
-			{ "<leader>s", group = "Search", icon = { icon = "", color = "green" } },
-			{ "<leader>g", group = "Git", mode = { "n", "v" }, icon = { icon = "", color = "blue" } },
-			{ "<leader>d", group = "Debug", mode = { "n" }, icon = { icon = "", color = "red" } },
-			{ "<leader>k", group = "Kulala", mode = { "n" }, icon = { icon = "󱂛", color = "yellow" } },
-			{ "<leader>u", group = "Undo Tree", mode = { "n" }, icon = { icon = "󰕍", color = "red" } },
-			{ "<leader>p", group = "AI", mode = { "n" }, icon = { icon = "󰁤", color = "purple" } },
+			{ "<leader>a", group = "Actions", icon = { icon = " ", color = "purple" } },
+			{ "<leader>r", group = "Rename", icon = { icon = "󰑕 ", color = "blue" } },
+			{ "<leader>f", group = "Format Document", icon = { icon = " ", color = "purple" } },
+			{ "<leader>q", group = "Open Diagnostics", icon = { icon = "󱖫 ", color = "red" } },
+			{ "<leader>s", group = "Search", icon = { icon = " ", color = "blue" } },
+			{ "<leader>g", group = "Git", mode = { "n", "v" }, icon = { icon = " ", color = "blue" } },
+			{ "<leader>d", group = "Debug", mode = { "n" }, icon = { icon = " ", color = "red" } },
+			{ "<leader>k", group = "Kulala", mode = { "n" }, icon = { icon = "󱂛 ", color = "yellow" } },
+			{ "<leader>u", group = "Undo Tree", mode = { "n" }, icon = { icon = "󰕍 ", color = "red" } },
+			{ "<leader>c", group = "Git Conflict", mode = { "n" }, icon = { icon = " ", color = "red" } },
+			{ "<leader>p", group = "AI", mode = { "n" }, icon = { icon = "󰁤 ", color = "purple" } },
+			{
+				"<leader><leader>",
+				group = "Search in Current Buffer",
+				mode = { "n" },
+				icon = { icon = "", color = "blue" },
+			},
 		},
 	},
 }

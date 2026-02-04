@@ -88,6 +88,15 @@ return {
 			return "%2l:%-2v"
 		end
 
-		require("mini.icons").setup()
+		require("mini.icons").setup({
+			extension = {
+				ts = { glyph = "", hl = "MiniIconsBlue" },
+				js = { glyph = "", hl = "MiniIconsYellow" },
+				mjs = { glyph = "", hl = "MiniIconsYellow" },
+				md = { glyph = "", hl = "MiniIconsBlue" },
+				json = { glyph = "", hl = "MiniIconsYellow" },
+				lock = { glyph = "", hl = "MiniIconsYellow" },
+			},
+		})
 	end,
 }

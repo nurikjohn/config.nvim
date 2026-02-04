@@ -19,7 +19,7 @@ return {
 				return nil
 			end
 
-			local disable_filetypes = { c = true, cpp = true, lua = true }
+			local disable_filetypes = { lua = true }
 			local lsp_format_opt
 			if disable_filetypes[vim.bo[bufnr].filetype] then
 				lsp_format_opt = "never"
