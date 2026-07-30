@@ -1,5 +1,6 @@
 return {
 	"mistweaverco/kulala.nvim",
+	ft = { "http", "rest", "json" },
 	dependencies = {
 		"nvim-treesitter/nvim-treesitter",
 		opts = function(_, opts)
@@ -20,17 +21,8 @@ return {
 				pathresolver = nil,
 			},
 		},
+		lsp = {
+			formatter = true,
+		},
 	},
-	config = function()
-		local kulala = require("kulala")
-
-		vim.keymap.set(
-			"n",
-			"<leader>kq",
-			kulala.scratchpad,
-			{ silent = true, noremap = true, desc = "Open scratchpad" }
-		)
-
-		kulala.setup()
-	end,
 }

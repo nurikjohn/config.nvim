@@ -76,6 +76,22 @@ vim.opt.foldlevel = 99
 vim.opt.foldlevelstart = 99
 vim.opt.foldnestmax = 4
 
+-- Disable treesitter completely for markdown
+vim.api.nvim_create_autocmd({ "BufReadPre", "BufNewFile" }, {
+	pattern = { "*.md", "*.markdown" },
+	callback = function()
+		vim.opt_local.foldmethod = "manual"
+	end,
+})
+
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "markdown" },
+	callback = function()
+		vim.opt_local.foldmethod = "manual"
+		pcall(vim.treesitter.stop)
+	end,
+})
+
 -- Auto-reload files when changed externally (e.g., by Claude)
 vim.opt.autoread = true
 
@@ -96,3 +112,5 @@ vim.api.nvim_create_autocmd("FileChangedShellPost", {
 		vim.notify("File changed on disk, reloaded", vim.log.levels.INFO)
 	end,
 })
+
+vim.o.backupcopy = "yes"

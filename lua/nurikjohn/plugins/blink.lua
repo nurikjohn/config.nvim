@@ -52,10 +52,7 @@ return {
 			},
 
 			sources = {
-				providers = {
-					markdown = { name = "RenderMarkdown", module = "render-markdown.integ.blink" },
-				},
-				default = { "lsp", "path", "snippets", "buffer", "markdown" },
+				default = { "lsp", "path", "snippets", "buffer" },
 			},
 			completion = {
 				menu = {

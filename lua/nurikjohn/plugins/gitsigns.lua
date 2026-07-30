@@ -46,7 +46,6 @@ return {
 				map("n", "<leader>gp", gitsigns.preview_hunk, { desc = "git [p]review hunk" })
 				map("n", "<leader>gb", gitsigns.blame_line, { desc = "git [b]lame line" })
 				map("n", "<leader>gB", gitsigns.blame, { desc = "git [B]lame" })
-				map("n", "<leader>gd", gitsigns.diffthis, { desc = "git [d]iff against index" })
 				map("n", "<leader>gD", function()
 					gitsigns.diffthis("@")
 				end, { desc = "git [D]iff against last commit" })

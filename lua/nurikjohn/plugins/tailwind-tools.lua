@@ -13,8 +13,5 @@ return {
 			inline_symbol = "󰝤",
 			debounce = 200,
 		},
-	}, -- your configuration
-	config = function()
-		require("tailwind-tools").setup({})
-	end,
+	},
 }

@@ -49,7 +49,7 @@ return { -- Useful plugin to show you pending keybinds.
 			{ "<leader>g", group = "Git", mode = { "n", "v" }, icon = { icon = " ", color = "blue" } },
 			{ "<leader>d", group = "Debug", mode = { "n" }, icon = { icon = " ", color = "red" } },
 			{ "<leader>k", group = "Kulala", mode = { "n" }, icon = { icon = "󱂛 ", color = "yellow" } },
-			{ "<leader>u", group = "Undo Tree", mode = { "n" }, icon = { icon = "󰕍 ", color = "red" } },
+			{ "<leader>u", desc = "Toggle Undo Tree", mode = { "n" }, icon = { icon = "󰕍 ", color = "red" } },
 			{ "<leader>c", group = "Git Conflict", mode = { "n" }, icon = { icon = " ", color = "red" } },
 			{ "<leader>p", group = "AI", mode = { "n" }, icon = { icon = "󰁤 ", color = "purple" } },
 			{

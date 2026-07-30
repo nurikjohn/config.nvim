@@ -8,8 +8,6 @@ return {
 				markdown = { "markdownlint" },
 			}
 
-			lint.linters_by_ft["markdown"] = { "markdownlint" }
-
 			-- However, note that this will enable a set of default linters,
 			-- which will cause errors unless these tools are available:
 			-- {
